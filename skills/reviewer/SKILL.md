@@ -25,7 +25,7 @@ Request changes only for real problems (a failing criterion, a bug, a broken con
 not for matters of taste.
 
 ## 4. Publish
-`git_commit(message="[reviewer] ...", files=["REVIEW.md"])`, then `git_push()`
+`git_commit(message="[reviewer] ...", files=["REVIEW.md"])`, then `git_merge_to_main()`
 (AGENTS.md, Git protocol).
 
 ## 5. Report

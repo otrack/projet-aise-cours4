@@ -17,11 +17,11 @@ Write `test_<module>.py` (unittest) with at least one test per acceptance criter
 `test_ac<N>_<short_description>` and with a docstring quoting the criterion.
 
 ## 3. Publish the tests
-`git_commit(message="[qa-tester] ...", files=["test_<module>.py"])`, then `git_push()`, so the coder can
-use them.
+`git_commit(message="[qa-tester] ...", files=["test_<module>.py"])`, then `git_merge_to_main()`,
+so the coder can use them.
 
 ## 4. Run them
-Call `git_pull()` again (the code may have arrived), then, if `<module>.py` exists,
+Call `git_pull()` again (the code may have been merged into main), then, if `<module>.py` exists,
 `run_skill_script(skill="qa-tester", script="run_tests.py")`.
 If a test fails, check it against SPEC.md: fix the test only if the test itself is wrong.
 
@@ -30,7 +30,7 @@ If a test fails, check it against SPEC.md: fix the test only if the test itself 
 - a table: acceptance criterion | test | pass / fail / not run.
 
 Then `git_commit(message="[qa-tester] ...", files=["QA_REPORT.md", "test_<module>.py"])`
-and `git_push()`.
+and `git_merge_to_main()`.
 
 ## 6. Report
 Answer with the SUMMARY line and the list of failing acceptance criteria, if any.

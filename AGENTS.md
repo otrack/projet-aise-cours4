@@ -18,9 +18,13 @@
 - edit only the files your role owns; read all the others
 
 ## Git protocol
-1. before starting: `git_pull()`
+- you work on your own branch, `agent/<your name>`, never on `main`
+- `main` is where the team exchanges its reports and artifacts: what is not merged into
+  `main` does not exist for the others
+1. before starting: `git_pull()`, to bring `main` into your branch
 2. after your work: `git_commit(message="[<role>] <what you did>", files=[<your files>])`
-3. `git_push()`; if it is rejected, `git_pull()` then `git_push()` again
+3. when your work is done: `git_merge_to_main()`, so the others and the reviewer see it;
+   on a conflict: `git_pull()`, fix the conflicting files, commit them, merge again
 
 ## Conventions
 - Python standard library only

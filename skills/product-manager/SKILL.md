@@ -23,7 +23,7 @@ Use exactly these sections:
   choose the simplest reasonable interpretation and write it here.
 
 ## 3. Publish
-`git_commit(message="[product-manager] ...", files=["SPEC.md"])`, then `git_push()`
+`git_commit(message="[product-manager] ...", files=["SPEC.md"])`, then `git_merge_to_main()`
 (AGENTS.md, Git protocol).
 
 ## 4. Report

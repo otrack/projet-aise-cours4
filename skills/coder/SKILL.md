@@ -16,7 +16,7 @@ Write the module named in SPEC.md, `<module>.py`, following its `## Interface` e
 Edit only the files you own: never `SPEC.md`, the tests, `QA_REPORT.md` or `REVIEW.md`.
 
 ## 3. Test
-The qa-tester may be writing the tests at the same time as you: call `git_pull()` again.
+The qa-tester may be writing the tests at the same time as you: call `git_pull()` again to get them from main.
 - If a `test_*.py` file exists, run
   `run_skill_script(skill="coder", script="run_tests.py")`; on failure, fix the code and rerun
   (at most 3 rounds). Fix the code, never the tests; if a test contradicts SPEC.md, say so in
@@ -24,7 +24,7 @@ The qa-tester may be writing the tests at the same time as you: call `git_pull()
 - If there is no test yet, re-read each acceptance criterion and check your code against it.
 
 ## 4. Publish
-`git_commit(message="[coder] ...", files=["<module>.py"])`, then `git_push()`
+`git_commit(message="[coder] ...", files=["<module>.py"])`, then `git_merge_to_main()`
 (AGENTS.md, Git protocol).
 
 ## 5. Report
