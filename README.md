@@ -15,9 +15,9 @@ avec l'une de ses deux premières options :
 - option B, un modèle gratuit d'OpenCode Zen, par exemple *DeepSeek V4.1 Flash Free*
   (`opencode/deepseek-v4.1-flash-free`).
 
-L'option C (un modèle local, avec Ollama) est déconseillée ici : une exécution de l'équipe enchaîne
-plusieurs dizaines d'appels d'outils, sans personne pour rattraper une erreur. Il faut aussi git, et
-Python 3.10 ou plus.
+L'option C (un modèle local, avec Ollama) est déconseillée ici, sauf si vous avez une machine
+puissante : ce projet demande beaucoup plus de ressources locales que les TP précédents. Il faut aussi
+git, et Python 3.10 ou plus.
 
 Les commandes ci-dessous utilisent le modèle de l'option A : avec l'option B, remplacez
 `mistral/ministral-14b-2512` par `opencode/deepseek-v4.1-flash-free`.
@@ -63,7 +63,7 @@ Une règle `deny` est appliquée par opencode, quoi que décide le modèle : cel
 | `AGENTS.md` | les règles de l'équipe |
 | `.opencode/agents/<agent>.md` | chaque agent : sa description, ses permissions, son *prompt* |
 | `.opencode/skills/<agent>/SKILL.md` | le savoir-faire de chaque sous-agent, qu'il charge en premier |
-| `.opencode/commands/team.md` | la commande `/team` |
+| `.opencode/commands/team.md` | la commande `/team` (détaillée ci-dessous) |
 | `opencode.json` | les permissions communes à tous les agents |
 | `team.sh` | la même équipe, dirigée par un script au lieu du *lead* (section 5) |
 
@@ -86,8 +86,8 @@ appelle le product-manager, le coder, le qa-tester et le reviewer, l'un après l
 la branche de chacun dans `main` ; si le reviewer demande des changements, il fait un tour de
 correction, et un seul. Comptez plusieurs dizaines de requêtes au modèle.
 
-Sans l'interface, `opencode run` ne connaît pas les commandes : donnez l'idée directement au
-*lead*, qui crée lui-même les *worktrees* :
+Si vous ne souhaitez pas utiliser l'interface d'opencode, attention : `opencode run` ne reconnaît pas
+les commandes. Donnez alors l'idée directement au *lead*, qui crée lui-même les *worktrees* :
 
 ```sh
 opencode run --agent lead --model mistral/ministral-14b-2512 "Idée : un module Python de conversion en chiffres romains"
